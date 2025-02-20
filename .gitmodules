@@ -1,0 +1,7 @@
+[submodule "thirdparty/OpenLiDARMap"]
+	path = thirdparty/OpenLiDARMap
+	url = https://github.com/TUMFTM/OpenLiDARMap.git
+[submodule "thirdparty/aw_lidar_centerpoint"]
+	path = thirdparty/aw_lidar_centerpoint
+	url = https://github.com/ga58lar/aw_lidar_centerpoint.git
+	branch = non-ros

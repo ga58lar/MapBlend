@@ -11,10 +11,31 @@
   ![Version](https://img.shields.io/badge/version-0.0.0-blue)
   
   <br>
-  <img src="doc/kitti_seq00.gif" alt="Demo GIF">
+  <img src="doc/seq00.gif" alt="Demo GIF">
 </div>
 
-## Release
-Coming soon!  
-~~07.02.2025 👀~~.  
-Due to delays in the release of [OpenLiDARMap](https://github.com/TUMFTM/OpenLiDARMap), the core library of this approach, the release has been postponed to 18.02.2025
+  
+## PRELIMINARY version
+
+This is a PRELIMINARY version
+
+## Install
+
+```bash
+git clone --recurse-submodules https://github.com/ga58lar/MapBlend.git
+
+./docker/build_docker.sh
+```
+
+## Run
+
+```bash
+./docker/run_docker.sh <config_path> <map_path> <scan_path> <output_path> <x> <y> <z> <qx> <qy> <qz> <qw>
+```
+
+For a detailed instruction the the core module [OpenLiDARMap](https://github.com/TUMFTM/OpenLiDARMap), please refer to the official GitHub repository.
+
+## Missing
+
+- Object tracking module for robust movable object removal
+- Life-long mapping module
