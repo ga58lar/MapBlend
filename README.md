@@ -6,9 +6,8 @@
 
   [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://www.docker.com/)
   ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
-  [![ROS2](https://img.shields.io/badge/ros2-gray.svg)](https://docs.ros.org/en/jazzy/index.html)
   ![License](https://img.shields.io/badge/license-Apache%202.0-blue)
-  ![Version](https://img.shields.io/badge/version-0.0.0-blue)
+  ![Version](https://img.shields.io/badge/version-0.0.1-blue)
   
   <br>
   <img src="doc/seq00.gif" alt="Demo GIF">
@@ -29,8 +28,11 @@ git clone --recurse-submodules https://github.com/ga58lar/MapBlend.git
 
 ## Run
 
+To run this repository, you will need a PC with a NVIDIA GPU.
+You also need to download the lidar_centerpoint pre-trained models from [Autoware](https://autowarefoundation.github.io/autoware.universe/main/perception/autoware_lidar_centerpoint/).
+
 ```bash
-./docker/run_docker.sh <config_path> <map_path> <scan_path> <output_path> <x> <y> <z> <qx> <qy> <qz> <qw>
+./docker/run_docker.sh <model_path> <config_path> <map_path> <scan_path> <output_path> <x> <y> <z> <qx> <qy> <qz> <qw>
 ```
 
 For a detailed instruction the the core module [OpenLiDARMap](https://github.com/TUMFTM/OpenLiDARMap), please refer to the official GitHub repository.
