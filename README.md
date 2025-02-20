@@ -18,6 +18,12 @@
 
 This is a PRELIMINARY version
 
+## Description
+
+This repository is an extension to [OpenLiDARMap](https://github.com/TUMFTM/OpenLiDARMap), a zero-drift georeferenced LiDAR-only point cloud mapping algorithm.  
+We combine the mapping module of OpenLiDARMap with the object detection module of [Autoware](https://autowarefoundation.github.io/autoware.universe/main/perception/autoware_lidar_centerpoint/) to filter movable objects before the mapping.  
+Additionally, we enable the update of point cloud maps through a raycasting-based voxel-occlusion update strategy (THIS IS NOT YET AVAILABLE IN THIS REPOSITORY). 
+
 ## Install
 
 ```bash
