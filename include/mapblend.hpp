@@ -1,10 +1,9 @@
-// mapblend.hpp
 #pragma once
 
 #include <iostream>
 #include <filesystem>
 #include "config/config.hpp"
-#include "pipeline_extension.hpp"  // Use the extended Pipeline
+#include "pipeline_extension.hpp"
 #include "lidar_centerpoint/centerpoint_trt.hpp"
 #include "lidar_centerpoint/centerpoint_config.hpp" 
 #include "io/loader_factory.hpp"
@@ -12,17 +11,11 @@
 
 #include <guik/viewer/async_light_viewer.hpp>
 
-// #include <rerun.hpp>
-
-// Forward declare the class we'll be friending
 class MapBlendPipeline;
 
-// Don't redefine Pipeline, just declare friendship
 namespace openlidarmap::pipeline {
-    class Pipeline;  // Forward declaration only
-}
+    class Pipeline; 
 
-// Define MapBlendPipeline outside the namespace
 class MapBlendPipeline {
 public:
     MapBlendPipeline(const openlidarmap::config::Config& olm_config,
@@ -92,8 +85,6 @@ public:
         return true;
     }
 
-    // rerun::RecordingStream rec{"MapBlend"};
-
 private:
     bool processFrame(std::shared_ptr<small_gicp::PointCloud> cloud);
     void filterPointsByBoxes(const std::vector<Eigen::Vector4f>& points,
@@ -118,12 +109,10 @@ private:
 };
 
 
-// Move processFrame to private section
 bool MapBlendPipeline::processFrame(std::shared_ptr<small_gicp::PointCloud> cloud) {
     return olm_pipeline_.process(cloud);
 }
 
-// Rest of private members and methods remain the same
 void MapBlendPipeline::filterPointsByBoxes(const std::vector<Eigen::Vector4f>& points,
                         const std::vector<centerpoint::Box3D>& boxes,
                         std::vector<Eigen::Vector3f>& inside_points,
@@ -134,8 +123,7 @@ void MapBlendPipeline::filterPointsByBoxes(const std::vector<Eigen::Vector4f>& p
     outside_points.reserve(points.size());
 
     for (const auto& pt : points) {
-        // Create Vector3f using block operation
-        Eigen::Vector3f point = pt.head<3>();  // Take first 3 components
+        Eigen::Vector3f point = pt.head<3>(); 
         bool inside = false;
         for (const auto& box : boxes) {
             Eigen::Vector3f center(box.x, box.y, box.z);

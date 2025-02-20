@@ -1,10 +1,9 @@
-// include/pipeline_extension.hpp
 #pragma once
 
 #include "pipeline/openlidarmap.hpp"
-#include "io/loader_factory.hpp" // Add this include
+#include "io/loader_factory.hpp"
 #include "utils/file_utils.hpp"
-#include "core/prediction.hpp"  // For ConstantDistancePredictor
+#include "core/prediction.hpp"
 #include "utils/pose_utils.hpp"
 #include <memory>
 

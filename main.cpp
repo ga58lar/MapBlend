@@ -1,4 +1,3 @@
-// main.cpp
 #include <iostream>
 #include <filesystem>
 #include <yaml-cpp/yaml.h>
@@ -10,7 +9,6 @@
 
 using namespace centerpoint;
 
-// Configuration structs and loading functions
 struct ModelConfig {
     std::vector<std::string> class_names;
     int point_feature_size;
